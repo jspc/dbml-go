@@ -5,9 +5,9 @@ import (
 	"os"
 	"strings"
 
-	"github.com/duythinht/dbml-go/core"
-	"github.com/duythinht/dbml-go/scanner"
-	"github.com/duythinht/dbml-go/token"
+	"github.com/jspc/dbml-go/core"
+	"github.com/jspc/dbml-go/scanner"
+	"github.com/jspc/dbml-go/token"
 )
 
 // Parser declaration
