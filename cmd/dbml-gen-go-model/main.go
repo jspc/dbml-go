@@ -18,6 +18,7 @@ func main() {
 		rememberAlias    = false
 		recursive        = false
 		exclude          = ""
+		isPostgres       = false
 	)
 
 	cmd := &cobra.Command{
@@ -32,6 +33,7 @@ func main() {
 				RememberAlias:    rememberAlias,
 				Recursive:        recursive,
 				Exclude:          exclude,
+				IsPostgres:       isPostgres,
 			})
 			return nil
 		},
@@ -48,6 +50,7 @@ func main() {
 	flags.BoolVarP(&rememberAlias, "remember-alias", "", rememberAlias, "should remember table alias. Only applied if \"from\" is a directory")
 	flags.BoolVarP(&recursive, "recursive", "", recursive, "recursive search directory. Only applied if \"from\" is a directory")
 	flags.StringVarP(&exclude, "exclude", "E", exclude, "regex for exclude \"from\" files. Only applied if \"from\" is a directory")
+	flags.BoolVarP(&isPostgres, "postgres", "", isPostgres, "Generate postgres specifics, including string based enum indexing")
 	if err := cmd.Execute(); err != nil {
 		log.Fatalf("Error %s", err)
 	}
